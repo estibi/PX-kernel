@@ -1,0 +1,7 @@
+1. kernel px jest ladowany przez grub'a na eip = 0x00100000.
+   Bootloader inicjuje rejestry, wlacza A20 i przechodzi w tryb chroniony. 
+   
+2. Mapa pamieci:
+
+text jadra	od 0x00100000 do 0x001fffff
+stos jadra	od 0x00200000 do 0x002ffffe

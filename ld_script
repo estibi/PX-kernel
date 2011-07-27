@@ -1,0 +1,29 @@
+/* ld_script */
+
+
+ENTRY(_start)
+
+SECTIONS
+{
+	. = 0x00100000;
+        .text : AT(0x00100000)
+	{
+        	code = .; _code = .;
+                 *(.text)
+                 . = ALIGN(4096);
+	}
+
+        .data : AT(0x00100000)
+	{
+        	data = .; _data = .;
+                 *(.data)
+                 . = ALIGN(4096);
+	}
+
+        .bss : AT(0x00100000)
+	{
+        	bss = .; _bss = .;
+                 *(.bss)
+                 . = ALIGN(4096);
+	}
+}
